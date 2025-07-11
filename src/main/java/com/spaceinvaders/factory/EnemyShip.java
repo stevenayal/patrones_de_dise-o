@@ -52,4 +52,8 @@ public abstract class EnemyShip {
     public void setAmtDamage(double amtDamage) {
         this.amtDamage = amtDamage;
     }
+
+    public double getDamage() {
+        return amtDamage;
+    }
 } 

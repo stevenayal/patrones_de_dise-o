@@ -1,0 +1,13 @@
+com\spaceinvaders\factory\EnemyShip.class
+com\spaceinvaders\SpaceInvadersGame.class
+com\spaceinvaders\factory\RocketEnemyShip.class
+com\spaceinvaders\strategy\CantFly.class
+com\spaceinvaders\strategy\ItFlys.class
+com\spaceinvaders\entities\Dog.class
+com\spaceinvaders\factory\EnemyShipFactory.class
+com\spaceinvaders\entities\Animal.class
+com\spaceinvaders\factory\UFOEnemyShip.class
+com\spaceinvaders\entities\Bird.class
+com\spaceinvaders\factory\BigUFOEnemyShip.class
+com\spaceinvaders\strategy\Flies.class
+com\spaceinvaders\singleton\GameManager.class

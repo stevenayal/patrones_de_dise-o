@@ -91,4 +91,8 @@ public abstract class Animal {
     public void setSound(String sound) {
         this.sound = sound;
     }
+
+    public String getFavoriteFood() {
+        return favFood;
+    }
 } 

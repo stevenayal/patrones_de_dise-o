@@ -19,6 +19,10 @@ public class Dog extends Animal {
         flyingType = new CantFly();
     }
     
+    public String getFavoriteFood() {
+        return super.getFavoriteFood();
+    }
+    
     @Override
     public String toString() {
         return "Dog{" +

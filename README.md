@@ -72,15 +72,52 @@ src/main/java/com/spaceinvaders/
 
 ## 🚀 Cómo Ejecutar
 
-1. **Compilar el proyecto**:
-   ```bash
-   javac -d bin src/main/java/com/spaceinvaders/**/*.java
-   ```
+### Opción 1: Scripts Automatizados (Recomendado)
 
-2. **Ejecutar el juego**:
-   ```bash
-   java -cp bin com.spaceinvaders.SpaceInvadersGame
-   ```
+**Windows (PowerShell)**:
+```powershell
+# Compilar y ejecutar
+.\compile.ps1
+
+# O usar Maven (si está instalado)
+.\compile_maven.ps1
+
+# Limpiar archivos compilados
+.\clean.ps1
+```
+
+**Linux/Mac**:
+```bash
+# Compilar y ejecutar
+./compile_and_run.sh
+
+# Limpiar archivos compilados
+rm -rf bin/
+```
+
+### Opción 2: Maven (Recomendado para desarrollo)
+
+```bash
+# Compilar
+mvn clean compile
+
+# Ejecutar
+mvn exec:java
+
+# Crear JAR ejecutable
+mvn clean package
+java -jar target/space-invaders-patterns-1.0.0.jar
+```
+
+### Opción 3: Compilación Manual
+
+```bash
+# Compilar
+javac -source 11 -target 11 -d bin src/main/java/com/spaceinvaders/**/*.java
+
+# Ejecutar
+java -cp bin com.spaceinvaders.SpaceInvadersGame
+```
 
 ## 📋 Funcionalidades del Juego
 

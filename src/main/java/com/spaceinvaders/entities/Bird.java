@@ -19,6 +19,10 @@ public class Bird extends Animal {
         flyingType = new ItFlys();
     }
     
+    public String getFavoriteFood() {
+        return super.getFavoriteFood();
+    }
+    
     @Override
     public String toString() {
         return "Bird{" +
