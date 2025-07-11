@@ -1,6 +1,6 @@
 # Space Invaders - Patrones de Diseño 🚀
 
-¡Hola angiru! Este proyecto implementa el clásico juego Space Invaders utilizando tres patrones de diseño fundamentales: **Strategy**, **Factory** y **Singleton**. ¡Todo en Java y con pruebas unitarias incluidas!
+Este proyecto implementa el clásico juego Space Invaders utilizando tres patrones de diseño fundamentales: **Strategy**, **Factory** y **Singleton**. Desarrollado en Java con pruebas unitarias incluidas.
 
 ## 📁 Estructura del Proyecto
 
@@ -29,46 +29,46 @@ src/main/java/com/spaceinvaders/
 
 ### 1. Patrón Strategy
 
-**¿Para qué sirve?**: Te permite cambiar el comportamiento de los objetos "al toque" mientras el programa está corriendo.
+**Propósito**: Permite cambiar el comportamiento de los objetos dinámicamente durante la ejecución.
 
-**¿Qué tenemos acá?**:
-- **Interfaz `Flies`**: Define cómo debe comportarse el vuelo
-- **Clases `ItFlys` y `CantFly`**: Una para volar y otra para no volar (¡obvio!)
-- **Clase `Animal`**: La que usa el comportamiento de vuelo
-- **Subclases `Dog` y `Bird`**: Cada una con su estrategia de vuelo
+**Implementación**:
+- **Interfaz `Flies`**: Define el contrato para el comportamiento de vuelo
+- **Clases `ItFlys` y `CantFly`**: Implementaciones para volar y no volar
+- **Clase `Animal`**: Contexto que utiliza el comportamiento de vuelo
+- **Subclases `Dog` y `Bird`**: Cada una con su estrategia específica
 
-**¿Por qué es bueno?**:
-- No necesitás herencia múltiple (que es un lío)
-- Podés cambiar el comportamiento "al vuelo"
-- Es fácil agregar nuevos comportamientos
+**Ventajas**:
+- Evita la necesidad de herencia múltiple
+- Permite cambiar comportamiento en tiempo de ejecución
+- Facilita la adición de nuevos comportamientos
 
 ### 2. Patrón Factory
 
-**¿Para qué sirve?**: Es como una fábrica que te crea las naves enemigas sin que vos te preocupes de cómo hacerlas.
+**Propósito**: Encapsula la lógica de creación de objetos, facilitando la creación de diferentes tipos de naves enemigas.
 
-**¿Qué tenemos acá?**:
-- **Clase abstracta `EnemyShip`**: Define cómo debe ser toda nave enemiga
-- **Subclases concretas**: `UFOEnemyShip`, `RocketEnemyShip`, `BigUFOEnemyShip` (¡cada una con su onda!)
-- **`EnemyShipFactory`**: La fábrica que te crea las naves según lo que necesites
+**Implementación**:
+- **Clase abstracta `EnemyShip`**: Define la interfaz común para todas las naves
+- **Subclases concretas**: `UFOEnemyShip`, `RocketEnemyShip`, `BigUFOEnemyShip`
+- **`EnemyShipFactory`**: Centraliza la creación de naves enemigas
 
-**¿Por qué es bueno?**:
-- Te ahorra el lío de crear objetos complicados
-- Es fácil agregar nuevos tipos de naves
-- Tu código queda más limpio y desacoplado
+**Ventajas**:
+- Encapsula la lógica de creación
+- Facilita la adición de nuevos tipos de naves
+- Reduce el acoplamiento en el código cliente
 
 ### 3. Patrón Singleton
 
-**¿Para qué sirve?**: Te asegura que solo haya una "copia" del gestor del juego en toda la aplicación (¡no más líos con múltiples instancias!).
+**Propósito**: Garantiza que solo exista una instancia del gestor del juego en toda la aplicación.
 
-**¿Qué tenemos acá?**:
-- **`GameManager`**: La clase que maneja todo el estado del juego
-- Constructor privado para que no puedas crear más de una instancia
-- Método `getInstance()` para obtener la única instancia que existe
+**Implementación**:
+- **`GameManager`**: Clase singleton que gestiona el estado global del juego
+- Constructor privado para evitar instanciación directa
+- Método `getInstance()` para obtener la instancia única
 
-**¿Por qué es bueno?**:
-- Tenés control centralizado del estado del juego
-- Podés acceder desde cualquier parte de la aplicación
-- Te garantiza que los datos del juego sean consistentes
+**Ventajas**:
+- Control centralizado del estado del juego
+- Acceso global desde cualquier parte de la aplicación
+- Garantiza consistencia en los datos del juego
 
 ## 🚀 Cómo Ejecutar
 
@@ -122,51 +122,51 @@ java -cp bin com.spaceinvaders.SpaceInvadersGame
 ## 📋 Funcionalidades del Juego
 
 ### Gestión del Estado (Singleton)
-- Control de puntuación (¡para ver quién es el mejor!)
-- Gestión de vidas (¡no te quedes sin vidas!)
-- Control de niveles (¡cada vez más difícil!)
+- Control de puntuación
+- Gestión de vidas
+- Control de niveles
 - Estado del juego (pausado/ejecutándose)
 
 ### Comportamiento de Vuelo (Strategy)
-- Animales con diferentes capacidades de vuelo (¡algunos vuelan, otros no!)
-- Cambio dinámico de comportamiento (¡cambia de estrategia al toque!)
-- Extensibilidad para nuevos comportamientos (¡fácil de agregar más!)
+- Animales con diferentes capacidades de vuelo
+- Cambio dinámico de comportamiento
+- Extensibilidad para nuevos comportamientos
 
 ### Creación de Enemigos (Factory)
-- Creación dinámica de naves enemigas (¡la fábrica no para!)
-- Diferentes tipos: UFO, Rocket, Big UFO (¡cada uno con su onda!)
+- Creación dinámica de naves enemigas
+- Diferentes tipos: UFO, Rocket, Big UFO
 - Cada tipo con características únicas (daño, nombre)
 
 ## 🎮 Simulación del Juego
 
-El programa principal (`SpaceInvadersGame.java`) te muestra todo el show:
+El programa principal (`SpaceInvadersGame.java`) demuestra:
 
-1. **Inicialización del Singleton**: Verificación de que solo hay una instancia (¡no más líos!)
-2. **Uso del Strategy**: Animales con diferentes comportamientos de vuelo (¡algunos vuelan, otros no!)
-3. **Uso del Factory**: Creación de diferentes tipos de naves enemigas (¡la fábrica en acción!)
-4. **Simulación de combate**: Interacción entre todos los componentes (¡la batalla espacial!)
+1. **Inicialización del Singleton**: Verificación de instancia única
+2. **Uso del Strategy**: Animales con diferentes comportamientos de vuelo
+3. **Uso del Factory**: Creación de diferentes tipos de naves enemigas
+4. **Simulación de combate**: Interacción entre todos los componentes
 
 ## 🔧 Extensibilidad
 
-El proyecto está diseñado para que puedas agregar cosas fácilmente:
+El proyecto está diseñado para ser fácilmente extensible:
 
-- **Nuevos comportamientos**: Implementar nuevas estrategias de vuelo (¡más animales voladores!)
-- **Nuevos enemigos**: Añadir nuevos tipos de naves al Factory (¡más enemigos para vencer!)
-- **Nuevas funcionalidades**: Extender el GameManager con más características (¡más opciones de juego!)
+- **Nuevos comportamientos**: Implementar nuevas estrategias de vuelo
+- **Nuevos enemigos**: Añadir nuevos tipos de naves al Factory
+- **Nuevas funcionalidades**: Extender el GameManager con más características
 
 ## 📚 Conceptos de Programación Orientada a Objetos
 
-Este proyecto te muestra varios conceptos importantes de POO:
+Este proyecto demuestra varios conceptos importantes de POO:
 
-- **Polimorfismo**: Arrays de objetos de la superclase que ejecutan métodos de subclases (¡mágico!)
-- **Herencia**: Subclases que extienden clases abstractas (¡como en la vida real!)
-- **Composición**: Objetos que contienen otros objetos (Strategy pattern - ¡todo conectado!)
-- **Encapsulación**: Ocultación de detalles de implementación (¡no todo se ve!)
-- **Abstracción**: Interfaces y clases abstractas (¡pensar en general, no en específico!)
+- **Polimorfismo**: Arrays de objetos de la superclase que ejecutan métodos de subclases
+- **Herencia**: Subclases que extienden clases abstractas
+- **Composición**: Objetos que contienen otros objetos (Strategy pattern)
+- **Encapsulación**: Ocultación de detalles de implementación
+- **Abstracción**: Interfaces y clases abstractas
 
 ## 🧪 Pruebas Unitarias
 
-¡Angiru! Este proyecto también incluye pruebas unitarias completas para asegurar que todo funcione como debe. Las pruebas están escritas en español para que sea más fácil entenderlas.
+Este proyecto incluye pruebas unitarias completas para validar la funcionalidad. Las pruebas están escritas en español para facilitar su comprensión.
 
 ### 📁 Estructura de Pruebas
 
@@ -219,26 +219,24 @@ Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
 BUILD SUCCESS
 ```
 
-¡Todas las pruebas pasan! 🎉
+Todas las pruebas pasan exitosamente.
 
 ## 🎯 Aprendizaje
 
 Este proyecto es ideal para aprender:
-- Cómo implementar patrones de diseño en Java (¡sin complicaciones!)
-- Cuándo usar cada patrón (¡cada uno tiene su momento!)
-- Cómo los patrones se complementan entre sí (¡todo funciona junto!)
-- Mejores prácticas de programación orientada a objetos (¡código limpio y mantenible!)
-- Cómo escribir pruebas unitarias efectivas (¡código confiable!)
+- Cómo implementar patrones de diseño en Java
+- Cuándo usar cada patrón
+- Cómo los patrones se complementan entre sí
+- Mejores prácticas de programación orientada a objetos
+- Cómo escribir pruebas unitarias efectivas
 
-## 🎉 ¡Y Listo!
+## Conclusión
 
-¡Angiru! Ya tenés todo lo que necesitás para entender y trabajar con patrones de diseño en Java. Este proyecto te muestra cómo implementar Strategy, Factory y Singleton de manera práctica y con pruebas unitarias incluidas.
+Este proyecto proporciona una implementación completa de los patrones Strategy, Factory y Singleton en Java, incluyendo pruebas unitarias para validar la funcionalidad.
 
-### 🚀 Próximos Pasos
+### Próximos Pasos
 
-- **Experimentá**: Modificá el código y agregá nuevas funcionalidades
-- **Practicá**: Implementá otros patrones de diseño
-- **Compartí**: Usá este proyecto como base para tus propios desarrollos
-- **Mejorá**: Agregá más pruebas y funcionalidades
-
-¡Que la fuerza de los patrones de diseño esté con vos! 🚀✨ 
+- Experimentar con modificaciones al código
+- Implementar otros patrones de diseño
+- Usar este proyecto como base para desarrollos propios
+- Agregar más pruebas y funcionalidades 
